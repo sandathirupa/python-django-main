@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script type="text/javascript" src="{% static 'scripts/fetchFilePath.js' %}"></script>
+        <!-- <script type="text/javascript" src="{% static 'scripts/jquery.js' %}"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/python" src="{% static 'scripts/readcsv.py' %}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="bg_image">
+
+        <div class="container">
+            <!-- <div class="bg_image"></div> -->
+            <div class="header">
+                <h1>Models Selection Tool</h1>
+            </div>
+            <div class="main">
+                {% block content %}
+
+                {% endblock content %}
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </body>
+</html>

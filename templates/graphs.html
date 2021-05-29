@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page_main flex_prop">
+    <div class="page_head">
+        <h1> {{ modelType }} Graph for {{ modelName }} </h1>
+    </div>
+    {% if modelType == "Regression" %}
+        {% if modelName == "SimpleLinear"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head">
+                coefficient of determination R^2 = {{ score }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if modelName == "MultipleLinear"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head-small">
+                coefficient of determination R^2 = {{ score }}
+            </div>
+        </div>
+        {% endif %}       
+
+        {% if modelName == "DecisionTree"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head-small">
+                coefficient of determination R^2 = {{ score }}
+            </div>
+        </div>
+        {% endif %}        
+        
+        {% if modelName == "Polynomial"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head-small">
+                Degree = {{ degree }}
+            </div>
+        </div>
+        {% endif %}        
+        
+        {% if modelName == "RandomForest"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head-small">
+                coefficient of determination R^2 = {{ score }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if modelName == "SVR"%}
+        <div class ="graph_container_col">
+            {% autoescape off %}
+                {{ plt_div }}
+            {% endautoescape %}
+            <div class="page_head-small">
+                coefficient of determination R^2 = {{ score }}
+            </div>
+        </div>
+        {% endif %}
+
+    {% endif %}
+</div>
+{% endblock content %}

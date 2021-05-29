@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="page_main flex_prop">
+        <div class="page_head">
+            <h1> Select the Model</h1>
+        </div>
+
+        <h2 class="page_head-small">REGRESSION OR CLASIFFICATION ?? </h2>
+        <form class="flex_prop" enctype = "multipart/form-data" action = "modelTypeSelection" method = "POST">
+            {% csrf_token %}
+            <div class="f_list">
+                <label for="Regression" class="radio_container">Regression
+                    {% if modelType == "Regression" %}
+                        <input type="radio" id="Regression" name="radio" value="Regression" checked>
+                    {% else %}
+                        <input type="radio" id="Regression" name="radio" value="Regression">
+                    {% endif %}
+                    <span class="checkmark"></span>
+                </label>
+                <label for="Classification" class="radio_container">Classification
+                    {% if modelType == "Classification" %}
+                        <input type="radio" id="Classification" name="radio" value="Classification" checked>
+                    {% else %}
+                        <input type="radio" id="Classification" name="radio" value="Classification">
+                    {% endif %}
+                    <span class="checkmark"></span>
+                </label>            
+            </div>
+            <input class="btn btn-small" type="submit" value="submit">
+        </form>
+
+        {% if modelType == "Regression" %}
+            <h2 class="page_head-small">Select Regression Model</h2>
+            <form class="flex_prop" enctype = "multipart/form-data" action = "modelNameSelection" method = "POST">
+                {% csrf_token %}
+                <div class="f_list">
+                    <label for="SimpleLinear" class="radio_container">SimpleLinear
+                        <input type="radio" id="SimpleLinear" name="radio" value="SimpleLinear" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="MultipleLinear" class="radio_container">MultipleLinear
+                        <input type="radio" id="MultipleLinear" name="radio" value="MultipleLinear">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="decisionTree" class="radio_container">decisionTree
+                        <input type="radio" id="decisionTree" name="radio" value="decisionTree">
+                        <span class="checkmark"></span>
+                    </label> 
+                    <label for="Polynomial" class="radio_container">Polynomial
+                        <input type="radio" id="Polynomial" name="radio" value="Polynomial">
+                        <span class="checkmark"></span>
+                    </label> 
+                    <label for="RandomForest" class="radio_container">RandomForest
+                        <input type="radio" id="RandomForest" name="radio" value="RandomForest">
+                        <span class="checkmark"></span>
+                    </label> 
+                    <label for="SVR" class="radio_container">SVR
+                        <input type="radio" id="SVR" name="radio" value="SVR">
+                        <span class="checkmark"></span>
+                    </label>             
+                </div>
+                <input class="btn btn-small" type="submit" value="submit">
+            </form>
+        {% endif %}
+
+        {% if modelType == "Classification" %}
+        <h2 class="page_head-small">Select Classification Model</h2>
+        <form class="flex_prop" enctype = "multipart/form-data" action = "modelNameSelection" method = "POST">
+            {% csrf_token %}
+            <div class="f_list">
+                <label for="Logistic" class="radio_container">Logistic
+                    <input type="radio" id="Logistic" name="radio" value="Logistic" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <label for="K-NN" class="radio_container">K-NN
+                    <input type="radio" id="K-NN" name="radio" value="K-NN">
+                    <span class="checkmark"></span>
+                </label>
+                <label for="SVM" class="radio_container">SVM
+                    <input type="radio" id="SVM" name="radio" value="SVM">
+                    <span class="checkmark"></span>
+                </label> 
+                <label for="KernelSVM" class="radio_container">KernelSVM
+                    <input type="radio" id="KernelSVM" name="radio" value="KernelSVM">
+                    <span class="checkmark"></span>
+                </label> 
+                <label for="NaiveBayes" class="radio_container">NaiveBayes
+                    <input type="radio" id="NaiveBayes" name="radio" value="NaiveBayes">
+                    <span class="checkmark"></span>
+                </label> 
+                <label for="DecisionTree" class="radio_container">DecisionTree
+                    <input type="radio" id="DecisionTree" name="radio" value="DecisionTree">
+                    <span class="checkmark"></span>
+                </label>     
+                <label for="RandomForest" class="radio_container">RandomForest
+                    <input type="radio" id="RandomForest" name="radio" value="RandomForest">
+                    <span class="checkmark"></span>
+                </label>          
+            </div>
+            <input class="btn btn-small" type="submit" value="submit">
+        </form>
+        {% endif %}
+    </div>
+{% endblock content %}

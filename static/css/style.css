@@ -1,0 +1,236 @@
+*,
+*::after,
+*::before {
+margin: 0;
+padding: 0;
+font-family: "Lato", sans-serif;
+box-sizing: inherit;
+}
+
+html {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    height: 120vh;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100%;
+} 
+
+.bg_image {
+    background-image: url(../images/MachineLearning.jpg);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-size: cover;
+    height: 100%;
+} 
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    height: 100%;
+}
+
+.header {
+    grid-area: header;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(44, 74, 243, 0.5);
+    color: #d8ebf7;
+    position: fixed;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.flex_prop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CSS for home page */
+
+.page_main {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.page_head {
+    padding: 0.5rem;
+    width: 60%;
+    border: none;
+    color: rgb(230, 217, 217);
+    border-radius: 10px;
+    text-transform: uppercase;
+    background-color: rgba(41, 169, 243, 0.6);
+    /* font-size: .9rem; */
+    text-align: center;
+}
+
+.page_head-small {
+    padding: 0.3rem 1rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 10px;
+    color: rgb(230, 217, 217);
+    text-transform: uppercase;
+    background-color: rgba(41, 169, 243, 0.8);
+    /* font-size: 1rem; */
+    text-align: center;
+}
+
+.btn {
+    background-color: rgba(113, 104, 241, 0.6);
+    color: rgb(230, 217, 217);
+    border: none;
+    cursor: pointer;
+    text-align: center; 
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s;
+    font-weight: 500;
+    border-radius: 3rem;
+}
+
+.btn-big {
+    font-size: 1.4rem;
+    margin: 1rem;
+    padding: 1rem 4rem;
+}
+
+.btn-small {
+    font-size: 1rem;
+    margin: 0.1rem 0.3rem;
+    padding: 1rem 2rem;
+}
+
+.btn:active {
+    transform: translateY(.4rem);
+    box-shadow: 0 10px 30px rgba(black, .5);
+    border: none;
+}
+
+#upload-file {
+    display: none;
+}
+
+.table_disp {
+    color: black;
+    height: 15rem;
+    width: 40rem;
+    overflow: scroll;
+    padding: 1rem;
+    background-color: rgba(181, 180, 185, 0.7);
+    border: 2px solid white;
+}
+
+/* Field select page */
+.f_list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: rows;
+    justify-content: space-between;
+}
+
+.radio_container {
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+    color: rgb(230, 217, 217);
+    position: relative;
+    padding: .3rem .5rem .3rem 3rem;
+    margin-bottom: 1rem;
+}
+
+.radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+.checkmark {
+    top: 0.15rem;
+    left: 0.1rem;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(196, 197, 226);
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .radio_container:hover {
+    background-color: rgba(44, 74, 243, 0.7);
+    border-radius: 0.5rem;
+  }
+
+  .radio_container input:checked ~ .checkmark {
+    border: 8px solid rgb(41, 39, 39);
+    background-color: white;
+  }
+
+  .chkbox_container {
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+    color: rgb(230, 217, 217);
+    position: relative;
+    padding: .3rem .5rem .3rem 3rem;
+    margin-bottom: 1rem;
+}
+
+
+  .chkbox_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .chkboxkmark {
+    top: 0.15rem;
+    left: 0.1rem;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(196, 197, 226);
+    position: absolute;
+  }
+
+  .chkbox_container:hover {
+    background-color: rgba(44, 74, 243, 0.7);
+    border-radius: 0.5rem;
+  }
+
+  .chkbox_container input:checked ~ .chkboxkmark {
+    border: 8px solid rgb(41, 39, 39);
+    background-color: white;
+  }
+
+
+  .graph_container_row {
+    display: flex;
+    align-items: center;
+    flex-direction: rows;
+    margin: 1rem;
+  }
+
+  .graph_container_col {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+  }

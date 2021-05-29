@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page_main flex_prop">
+    <div class="page_head">
+        <h1> Test Machine learning models</h1>
+    </div>
+    <form class="flex_prop" enctype = "multipart/form-data" action = "displayFile" method = "POST">
+        {% csrf_token %}
+        <label class="btn btn-big">
+            <input type="file" name="filePath" id="upload-file" value="fileupload">   
+            <span class="upload">Select CSV</span>
+        </label>
+        <input class="btn btn-small" type="submit" value="submit">
+    </form>
+    {% if Error_op %}
+        <h1 style="color: red">{{ Error_op }}</h1>
+    {% endif %}
+</div>
+{% endblock content %}
